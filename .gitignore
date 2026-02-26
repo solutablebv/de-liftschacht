@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+
+# Internal documents
+*.pdf
+*.md
+!README.md
+LYFD-*.md
+
+# Dev tools
+serve.mjs
+screenshot.mjs
+temporary screenshots/
+node_modules/
