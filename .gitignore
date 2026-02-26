@@ -7,8 +7,6 @@
 !README.md
 LYFD-*.md
 
-# Dev tools
-serve.mjs
-screenshot.mjs
+# Dev artifacts
 temporary screenshots/
 node_modules/
