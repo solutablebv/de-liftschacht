@@ -347,10 +347,11 @@
 
     .signup-btn {
       font-family: var(--font-sans); font-weight: 600; font-size: 15px;
-      padding: 16px 28px; background: var(--brand); color: #fff; border: none;
-      border-radius: 12px; cursor: pointer; white-space: nowrap;
+      padding: 10px 28px; background: var(--brand); color: #fff; border: none;
+      border-radius: 20px; cursor: pointer; white-space: nowrap;
       transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease;
       box-shadow: 0 2px 12px rgba(73,40,253,0.25); position: relative; z-index: 1;
+      text-decoration: none;
     }
     .signup-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(73,40,253,0.35); }
     .signup-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
@@ -368,6 +369,118 @@
       font-weight: 600; font-size: 16px; color: var(--brand); padding: 16px;
     }
     .signup-success svg { width: 20px; height: 20px; }
+
+    /* HubSpot form styling */
+    .hs-form-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    
+    .hs-form, .hbspt-form {
+      width: 100% !important;
+      background: transparent !important;
+    }
+    
+    .hs-form-field {
+      margin-bottom: 16px !important;
+      width: 100% !important;
+    }
+    
+    .hs-form-field label {
+      display: block !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: rgba(255,255,255,0.8) !important;
+      margin-bottom: 6px !important;
+      text-align: left !important;
+      font-family: var(--font-sans) !important;
+    }
+    
+    .hs-input, .hs-fieldtype-text input, .hs-fieldtype-email input, input.hs-input {
+      width: 100% !important;
+      padding: 12px 14px !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      border-radius: 8px !important;
+      font-size: 15px !important;
+      color: #fff !important;
+      background: rgba(255,255,255,0.08) !important;
+      font-family: var(--font-sans) !important;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      box-sizing: border-box !important;
+    }
+    
+    .hs-input::placeholder, .hs-fieldtype-text input::placeholder, .hs-fieldtype-email input::placeholder, input.hs-input::placeholder {
+      color: rgba(255,255,255,0.4) !important;
+    }
+    
+    .hs-input:focus, .hs-fieldtype-text input:focus, .hs-fieldtype-email input:focus, input.hs-input:focus {
+      border-color: var(--brand) !important;
+      box-shadow: 0 0 0 3px rgba(73,40,253,0.3) !important;
+      outline: none !important;
+      background: rgba(255,255,255,0.12) !important;
+    }
+    
+    .hs-fieldtype-textarea textarea {
+      width: 100% !important;
+      padding: 12px 14px !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      border-radius: 8px !important;
+      font-size: 15px !important;
+      color: #fff !important;
+      background: rgba(255,255,255,0.08) !important;
+      font-family: var(--font-sans) !important;
+      box-sizing: border-box !important;
+    }
+    
+    .hs-form-checkbox {
+      margin-bottom: 12px !important;
+    }
+    
+    .hs-form-checkbox label, .hs-fieldtype-checkbox label {
+      font-size: 13px !important;
+      font-weight: 400 !important;
+      color: rgba(255,255,255,0.7) !important;
+      cursor: pointer !important;
+      margin-left: 6px !important;
+    }
+    
+    .hs-form-checkbox input[type="checkbox"], .hs-fieldtype-checkbox input[type="checkbox"] {
+      width: 18px !important;
+      height: 18px !important;
+      cursor: pointer !important;
+    }
+    
+    .hs-button {
+      padding: 12px 28px !important;
+      border-radius: 8px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      border: none !important;
+      cursor: pointer !important;
+      font-family: var(--font-sans) !important;
+      background: var(--brand) !important;
+      color: white !important;
+      transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease !important;
+      width: 100% !important;
+    }
+    
+    .hs-button:hover {
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 20px rgba(73,40,253,0.35) !important;
+    }
+    
+    .hs-button:active {
+      transform: translateY(0) scale(0.98) !important;
+    }
+    
+    .hs-form-required {
+      color: var(--brand) !important;
+    }
+    
+    /* Error and success states */
+    .hs-error-msgs { font-size: 12px !important; color: #ff6b6b !important; margin-top: 4px !important; }
+    .hs-form-field.hs-error-field input { border-color: #ff6b6b !important; }
+    .inputs-list { margin: 0 !important; background: transparent !important; }
 
     /* ─── MARQUEE ─── */
     .marquee-section { padding: 20px 0; background: var(--text); overflow: hidden; }
@@ -600,7 +713,7 @@
     .team-caption strong { color: var(--text); font-weight: 700; }
 
     /* ─── PETER ─── */
-    .who { padding: 0 0 120px; }
+    .who { padding: 0 0 120px; margin-top: 120px }
     .who-layout {
       display: flex; gap: 36px; align-items: center; padding: 40px;
       background: var(--bg-card); border-radius: 20px; border: 1px solid var(--border);
@@ -724,12 +837,12 @@
   </div>
 
   <!-- NAV -->
-  <nav aria-label="Hoofdnavigatie"><a href="https://lyfd.nl" class="nav-logo">LYFD</a><a href="#aanmelden" class="nav-cta magnetic" data-strength="0.3">Ja, ik lees mee</a></nav>
+  <nav aria-label="Hoofdnavigatie"><a href="https://lyfd.nl" class="nav-logo">LYFD</a><a href="/inschrijven.html" class="nav-cta magnetic" data-strength="0.3">Ja, ik lees mee</a></nav>
 
   <!-- STICKY BAR -->
   <div class="sticky-bar" id="stickyBar">
     <span class="sticky-bar-text"><strong>De Liftschacht</strong> — elke donderdag gratis in je inbox</span>
-    <form onsubmit="handleSubmit(event, this)"><input type="email" placeholder="jouw@email.nl" required aria-label="E-mailadres"><input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit">Ja, ik lees mee</button></form>
+    <a href="/inschrijven.html" style="background: none; border: none; cursor: pointer; font-family: inherit; font-size: 16px; color: #fff; font-weight: 500; padding: 0; text-decoration: none;">Ja, ik lees mee</a>
   </div>
 
   <!-- LIFT SHAFT -->
@@ -759,12 +872,9 @@
     <h1>De Liftschacht.</h1>
     <span class="hero-italic" id="heroTypewriter"></span>
     <p class="hero-sub">Branche-inzichten, carrierekansen, compliance-updates en capaciteitstrends. Voor iedereen die werkt in of met de liftbranche.</p>
-    <form class="signup-form" id="hero-form" onsubmit="handleSubmit(event, this)">
-      <input type="email" class="signup-input" placeholder="jouw@email.nl" required aria-label="E-mailadres">
-      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="glow-btn-wrap"><button type="submit" class="signup-btn magnetic" data-strength="0.2">Ja, ik lees mee</button></div>
-    </form>
-    <div class="signup-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Welkom! Volgende donderdag ontvang je je eerste editie.</div>
+    <div id="hero-form" style="text-align: center;">
+      <a href="/inschrijven.html" class="signup-btn magnetic" data-strength="0.2" style="display: inline-block; margin-top: 10px; text-decoration: none; color: #fff;">Ja, ik lees mee</a>
+    </div>
     <p class="signup-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Gratis. Elke donderdag. Geen spam. Altijd opzegbaar.</p>
   </section>
 
@@ -827,7 +937,7 @@
       <div class="latest-topic reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Wat verdient een liftmonteur in 2026?</div>
       <div class="latest-topic reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Het hybride model: 70% vast, 30% flex</div>
     </div>
-    <p class="latest-missed reveal">Dit gemist? <a href="#aanmelden">Schrijf je in</a> en je hebt het volgende week wel.</p>
+    <p class="latest-missed reveal">Dit gemist? <a href="/inschrijven.html">Schrijf je in</a> en je hebt het volgende week wel.</p>
   </div></div></section>
 
   <!-- RUBRIEKEN -->
@@ -934,13 +1044,7 @@
     <div class="container--narrow">
       <h2 class="reveal">Volgende donderdag<br><span class="accent">in jouw inbox.</span></h2>
       <p class="social-count reveal">Sluit je aan bij <strong>500+ liftprofessionals</strong> die elke week mee lezen.</p>
-      <form class="signup-form reveal" id="footer-form" onsubmit="handleSubmit(event, this)">
-        <input type="email" class="signup-input" placeholder="jouw@email.nl" required aria-label="E-mailadres">
-        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="glow-btn-wrap"><button type="submit" class="signup-btn magnetic" data-strength="0.2">Ja, ik lees mee</button></div>
-      </form>
-      <div class="signup-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Welkom! Volgende donderdag ontvang je je eerste editie.</div>
-      <p class="signup-note reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Gratis. Elke donderdag. Geen spam. Altijd opzegbaar.</p>
+      <a href="/inschrijven.html" class="signup-btn magnetic reveal" data-strength="0.2" style="margin-top: 24px; display: inline-block;">Ja, ik lees mee</a>
     </div>
   </section>
 
@@ -1204,9 +1308,7 @@
       }
     }
 
-    document.querySelector('.nav-cta').addEventListener('click', e => {
-      e.preventDefault(); document.querySelector('#aanmelden').scrollIntoView({ behavior: 'smooth' });
-    });
+    // Modal moved to separate /inschrijven.html page
 
     // ─── PARALLAX ───
     let sY = 0, tY = 0;
